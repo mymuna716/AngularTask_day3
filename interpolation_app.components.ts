@@ -1,3 +1,4 @@
+//using interpolation
 import { Component } from '@angular/core';
 
 @Component({
