@@ -1,0 +1,28 @@
+<h1>About the Company</h1>
+<P>Impelsys is a leading provider of technology solutions and services for content publishers,
+     learning providers and enterprises – managing content and learning delivery on 
+     its flagship platform, the World’s Most Comprehensive Read-to-Learn Solution.....<button (click) ="toggleShow()" class="classColor" >Show more</button></P>
+
+<p *ngIf='showDetails'>HeadQuaters : {{HeadQuaters}}</p>
+<p *ngIf='showDetails'>Published on the year : {{Published}}</p>
+<p *ngIf='showDetails'>Total no of employees : {{No_Employees}}</p>
+
+<br>
+<h2>Details about Employees</h2>
+<table border=2>
+    <thead>
+        <tr><th>Sr.no</th><th>Empno</th><th>Name</th><th>Salary</th><th>DOB</th></tr>
+        <tr *ngFor ="let emp of employees; trackBy:trackByEmpno; let i=index; 
+        let isFirst=first; let isLast=last; let isEven=even; let isOdd=odd; ">
+            <td>{{i+1}}</td>
+            <td>{{emp.empno}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.salary}}</td>
+            <td>{{emp.DOB}}</td>
+        </tr>
+        <tr *ngIf="!employees ||employees.length==0">
+        <td colspan="5">There is no Employee</td>
+        </tr>
+        <tr><button (click)="getemployees()" class="boldClass">Refesh</button></tr>
+    </thead>
+</table>
